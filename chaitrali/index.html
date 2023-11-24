@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Examples</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            margin-inline: 5rem;
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #example5 img{
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DOM Manipulation</h1>
+
+        <div id="example1">
+            <h2>Change Text</h2>
+            <p>This is some initial text.</p>
+            <button onclick="changeText()">Change Text</button>
+        </div>
+
+        <div id="example2">
+            <h2>Change Style</h2>
+            <p>This is a paragraph with changing style.</p>
+            <button onclick="changeStyle()">Change Style</button>
+        </div>
+
+        <div id="example3">
+            <h2>Remove Element</h2>
+            <p>This element can be removed.</p>
+            <button onclick="removeElement()">Remove Element</button>
+        </div>
+
+        <div id="example4">
+            <h2>Event Listener</h2>
+            <button id="eventButton">Click me!</button>
+        </div>
+
+        <div id="example5">
+            <h2>Change Attribute</h2>
+            <div><img id="image" src="image.jpg" alt="Original Image"></div>
+            <button onclick="changeAttribute()">Change Attribute</button>
+        </div>
+    </div>
+
+    <script>
+        function changeText() {
+            const textElement = document.querySelector("#example1 p");
+            textElement.textContent = "Text changed!";
+        }
+
+        function changeStyle() {
+            const paragraph = document.querySelector("#example2 p");
+            paragraph.style.color = "blue";
+            paragraph.style.fontWeight = "bold";
+        }
+
+        function removeElement() {
+            const elementToRemove = document.querySelector("#example3 p");
+            elementToRemove.remove();
+        }
+
+        function changeAttribute() {
+            const imageElement = document.querySelector("#image");
+            imageElement.src = "new_image.jpg";
+            imageElement.alt = "Changed Image";
+        }
+
+        const eventButton = document.querySelector("#eventButton");
+        eventButton.addEventListener("click", function () {
+            alert("Button clicked!");
+        });
+    </script>
+</body>
+</html>
