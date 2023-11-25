@@ -27,7 +27,7 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background: #007bff;
+            background: #5adbb5;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -46,19 +46,19 @@
 
         <div id="example1">
             <h2>Change Text</h2>
-            <p>This is some initial text.</p>
+            <p>chaitrali.</p>
             <button onclick="changeText()">Change Text</button>
         </div>
 
         <div id="example2">
             <h2>Change Style</h2>
-            <p>This is a paragraph with changing style.</p>
+            <p>chaitrali.</p>
             <button onclick="changeStyle()">Change Style</button>
         </div>
 
         <div id="example3">
             <h2>Remove Element</h2>
-            <p>This element can be removed.</p>
+            <p>This element will be removed.</p>
             <button onclick="removeElement()">Remove Element</button>
         </div>
 
@@ -69,7 +69,7 @@
 
         <div id="example5">
             <h2>Change Attribute</h2>
-            <div><img id="image" src="image.jpg" alt="Original Image"></div>
+            <div><img id="image" src="/chaitrali/image.jpeg" alt="Original Image"></div>
             <button onclick="changeAttribute()">Change Attribute</button>
         </div>
     </div>
@@ -77,12 +77,12 @@
     <script>
         function changeText() {
             const textElement = document.querySelector("#example1 p");
-            textElement.textContent = "Text changed!";
+            textElement.textContent = "BHOSALE!";
         }
 
         function changeStyle() {
             const paragraph = document.querySelector("#example2 p");
-            paragraph.style.color = "blue";
+            paragraph.style.color = "green";
             paragraph.style.fontWeight = "bold";
         }
 
@@ -93,7 +93,7 @@
 
         function changeAttribute() {
             const imageElement = document.querySelector("#image");
-            imageElement.src = "new_image.jpg";
+            imageElement.src = "/chaitrali/new_image.jpeg";
             imageElement.alt = "Changed Image";
         }
 
