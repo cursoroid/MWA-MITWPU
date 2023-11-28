@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Parking Management System</title>
+</head>
+<body>
+      <div class="container">
+        <h1>Parking Management System</h1>
+        <div id="parking-lot" class="parking-lot">
+          <!-- Parking spots will be dynamically generated here -->
+        </div>
+        <div class="revenue-info">
+          <h2>Revenue Information</h2>
+          <div id="charges-window" class="charges-window"></div>
+          <p>Total Revenue: <span id="totalRevenue">0</span> Rupees</p>
+      </div>
+      <div class="user-input">
+        <label for="vehicleNumber">Enter Vehicle Number:</label>
+        <input type="text" id="vehicleNumber" placeholder="Ex: KA01AB1234">
+        <label for="vehicleType">Vehicle Type:</label>
+        <select id="vehicleType">
+            <option value="2">Two-Wheeler</option>
+            <option value="4">Four-Wheeler</option>
+        </select>
+        <button onclick="assignParkingSpot()">Assign Parking Spot</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

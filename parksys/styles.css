@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.parking-lot {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.parking-spot {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border: 1px solid #999;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.parking-spot.occupied {
+  background-color: #ff6961; /* Light Coral */
+}
+
+.user-input {
+  margin-top: 20px;
+  text-align: center;
+}
+
+label {
+  margin-right: 10px;
+}
+
+input {
+  padding: 8px;
+}
+
+button {
+  padding: 8px 16px;
+  background-color: #4caf50; /* Green */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Add styles for the parking spot selection and vehicle types */
+.parking-spot {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #999;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.parking-spot.selected {
+  background-color: #add8e6; /* Light Blue */
+}
+
+.parking-spot.occupied {
+  background-color: #ff6961; /* Light Coral */
+}
+
+.parking-spot.two-wheeler {
+  background-color: #98fb98; /* Pale Green */
+}
+
+.parking-spot.four-wheeler {
+  background-color: #ffb6c1; /* Light Pink */
+}
+
