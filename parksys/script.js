@@ -10,10 +10,7 @@ function generateParkingSpots() {
     parkingSpot.classList.add('parking-spot');
     parkingSpot.dataset.spotNumber = i;
     parkingSpot.innerHTML = i;
-
-    // Add the aria-label attribute
     parkingSpot.setAttribute('aria-label', `Parking Spot ${i}`);
-
     parkingSpot.addEventListener('click', selectParkingSpot);
     parkingLot.appendChild(parkingSpot);
   }
@@ -73,6 +70,48 @@ function assignParkingSpot() {
     }
   } else {
     alert('Please select a parking spot before assigning.');
+  }
+}
+
+function checkout() {
+  const vehicleNumberInput = document.getElementById('vehicleNumber');
+  const vehicleNumber = vehicleNumberInput.value.trim();
+
+  // Find the parking spot with the given vehicle number
+  const parkingSpot = document.querySelector(`.parking-spot[data-vehicle-number="${vehicleNumber}"]`);
+
+  if (parkingSpot && parkingSpot.classList.contains('occupied')) {
+    const spotNumber = parkingSpot.dataset.spotNumber;
+
+    // Find the corresponding charge information
+    const chargeInfo = revenue.charges.find(charge => charge.spotNumber === spotNumber);
+
+    if (chargeInfo) {
+      const confirmation = confirm(`Checkout for vehicle ${vehicleNumber} at spot ${spotNumber} with a charge of ${chargeInfo.charge} Rupees?`);
+
+      if (confirmation) {
+        // Clear the parking spot
+        parkingSpot.classList.remove('occupied', 'two-wheeler', 'four-wheeler');
+        parkingSpot.innerHTML = spotNumber;
+
+        // Remove charge information from the revenue object
+        const chargeIndex = revenue.charges.indexOf(chargeInfo);
+        revenue.charges.splice(chargeIndex, 1);
+
+        // Update the total revenue
+        revenue.total -= chargeInfo.charge;
+        document.getElementById('totalRevenue').innerText = revenue.total;
+
+        // Display updated charges in the window
+        displayCharges();
+
+        alert(`Checkout successful for vehicle ${vehicleNumber} at spot ${spotNumber}.`);
+      }
+    } else {
+      alert('No charge information found for the specified vehicle number.');
+    }
+  } else {
+    alert('No occupied spot found for the specified vehicle number.');
   }
 }
 
